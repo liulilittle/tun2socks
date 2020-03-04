@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DLLRelease|Win32">
+      <Configuration>DLLRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DLLRelease|x64">
+      <Configuration>DLLRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{DB9AB805-4D76-495E-9F24-07B8B64215A8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>tun2sockscore</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)libuv\include;$(ProjectDir)lwip\src\include;$(ProjectDir)include;$(ProjectDir)\..\tun2socks-dns;$(IncludePath)</IncludePath>
+    <ExcludePath>$(ProjectDir)lwip\src\include;$(ExcludePath)</ExcludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;__WIN32__;NODEBUG;TUN2SOCKSCORE_EXPORTS;_WINDOWS;_WINSOCK_DEPRECATED_NO_WARNINGS;_WIN32_WINNT=0x0A00;BOOST_COROUTINES_NO_DEPRECATION_WARNING;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;_CRT_SECURE_NO_WARNINGS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/IGNORE:4103 /await %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4103</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>Default</CompileAs>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>Iphlpapi.lib;WS2_32.lib</AdditionalDependencies>
+      <AdditionalOptions>/IGNORE:4221 /IGNORE:4006 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;TUN2SOCKSCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;TUN2SOCKSCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;TUN2SOCKSCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;TUN2SOCKSCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;TUN2SOCKSCORE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="lwip\src\api\api_lib.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\api_msg.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\err.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\if_api.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\netbuf.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\netdb.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\netifapi.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\sockets.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\api\tcpip.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\altcp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\altcp_alloc.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\altcp_tcp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\def.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\dns.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\inet_chksum.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\init.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ip.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\autoip.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\dhcp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\etharp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\icmp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\igmp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\ip4.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\ip4_addr.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv4\ip4_frag.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\dhcp6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\ethip6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\icmp6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\inet6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\ip6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\ip6_addr.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\ip6_frag.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\mld6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\ipv6\nd6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\mem.cpp">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\memp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\netif.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\pbuf.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\raw.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\stats.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\sys.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\tcp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\tcp_in.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\tcp_out.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\timeouts.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\core\udp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\bridgeif.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\bridgeif_fdb.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ethernet.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\lowpan6.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\lowpan6_ble.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\lowpan6_common.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\auth.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\ccp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\chap-md5.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\chap-new.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\chap_ms.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\demand.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\eap.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\ecp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\eui64.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\fsm.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\ipcp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\ipv6cp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\lcp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\magic.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\mppe.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\multilink.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\polarssl\arc4.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\polarssl\des.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\polarssl\md4.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\polarssl\md5.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\polarssl\sha1.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\ppp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\pppapi.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\pppcrypt.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\pppoe.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\pppol2tp.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\pppos.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\upap.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\utils.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\ppp\vj.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\slipif.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\netif\zepif.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lwip\src\sys_arch.cpp">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="netifc.cpp" />
+    <ClCompile Include="socks5.cpp">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="tun2socks.cpp" />
+    <ClCompile Include="tuntap-windows.cpp">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\lwipstack.h" />
+    <ClInclude Include="include\socks5.h" />
+    <ClInclude Include="include\socks5_auth.h" />
+    <ClInclude Include="include\tap-windows.h" />
+    <ClInclude Include="include\tun2socks.h" />
+    <ClInclude Include="include\tuntap.h" />
+    <ClInclude Include="libuv\include\android-ifaddrs.h" />
+    <ClInclude Include="libuv\include\pthread-barrier.h" />
+    <ClInclude Include="libuv\include\stdint-msvc2008.h" />
+    <ClInclude Include="libuv\include\tree.h" />
+    <ClInclude Include="libuv\include\uv-aix.h" />
+    <ClInclude Include="libuv\include\uv-bsd.h" />
+    <ClInclude Include="libuv\include\uv-darwin.h" />
+    <ClInclude Include="libuv\include\uv-errno.h" />
+    <ClInclude Include="libuv\include\uv-linux.h" />
+    <ClInclude Include="libuv\include\uv-os390.h" />
+    <ClInclude Include="libuv\include\uv-posix.h" />
+    <ClInclude Include="libuv\include\uv-sunos.h" />
+    <ClInclude Include="libuv\include\uv-threadpool.h" />
+    <ClInclude Include="libuv\include\uv-unix.h" />
+    <ClInclude Include="libuv\include\uv-version.h" />
+    <ClInclude Include="libuv\include\uv-win.h" />
+    <ClInclude Include="libuv\include\uv.h" />
+    <ClInclude Include="lwip\src\include\arch\bpstruct.h" />
+    <ClInclude Include="lwip\src\include\arch\cc.h" />
+    <ClInclude Include="lwip\src\include\arch\epstruct.h" />
+    <ClInclude Include="lwip\src\include\arch\perf.h" />
+    <ClInclude Include="lwip\src\include\arch\sys_arch.h" />
+    <ClInclude Include="lwip\src\include\compat\posix\arpa\inet.h" />
+    <ClInclude Include="lwip\src\include\compat\posix\netdb.h" />
+    <ClInclude Include="lwip\src\include\compat\posix\net\if.h" />
+    <ClInclude Include="lwip\src\include\compat\posix\sys\socket.h" />
+    <ClInclude Include="lwip\src\include\compat\stdc\errno.h" />
+    <ClInclude Include="lwip\src\include\lwip\altcp.h" />
+    <ClInclude Include="lwip\src\include\lwip\altcp_tcp.h" />
+    <ClInclude Include="lwip\src\include\lwip\altcp_tls.h" />
+    <ClInclude Include="lwip\src\include\lwip\api.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\altcp_proxyconnect.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\altcp_tls_mbedtls_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\fs.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\httpd.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\httpd_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\http_client.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\lwiperf.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\mdns.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\mdns_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\mdns_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\mqtt.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\mqtt_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\mqtt_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\netbiosns.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\netbiosns_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\smtp.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\smtp_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmpv3.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_core.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_mib2.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_scalar.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_snmpv2_framework.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_snmpv2_usm.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_table.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\snmp_threadsync.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\sntp.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\sntp_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\tftp_opts.h" />
+    <ClInclude Include="lwip\src\include\lwip\apps\tftp_server.h" />
+    <ClInclude Include="lwip\src\include\lwip\arch.h" />
+    <ClInclude Include="lwip\src\include\lwip\autoip.h" />
+    <ClInclude Include="lwip\src\include\lwip\debug.h" />
+    <ClInclude Include="lwip\src\include\lwip\def.h" />
+    <ClInclude Include="lwip\src\include\lwip\dhcp.h" />
+    <ClInclude Include="lwip\src\include\lwip\dhcp6.h" />
+    <ClInclude Include="lwip\src\include\lwip\dns.h" />
+    <ClInclude Include="lwip\src\include\lwip\err.h" />
+    <ClInclude Include="lwip\src\include\lwip\errno.h" />
+    <ClInclude Include="lwip\src\include\lwip\etharp.h" />
+    <ClInclude Include="lwip\src\include\lwip\ethip6.h" />
+    <ClInclude Include="lwip\src\include\lwip\icmp.h" />
+    <ClInclude Include="lwip\src\include\lwip\icmp6.h" />
+    <ClInclude Include="lwip\src\include\lwip\if_api.h" />
+    <ClInclude Include="lwip\src\include\lwip\igmp.h" />
+    <ClInclude Include="lwip\src\include\lwip\inet.h" />
+    <ClInclude Include="lwip\src\include\lwip\inet_chksum.h" />
+    <ClInclude Include="lwip\src\include\lwip\init.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip4.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip4_addr.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip4_frag.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip6.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip6_addr.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip6_frag.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip6_zone.h" />
+    <ClInclude Include="lwip\src\include\lwip\ip_addr.h" />
+    <ClInclude Include="lwip\src\include\lwip\lwipopts.h" />
+    <ClInclude Include="lwip\src\include\lwip\mem.h" />
+    <ClInclude Include="lwip\src\include\lwip\memp.h" />
+    <ClInclude Include="lwip\src\include\lwip\mld6.h" />
+    <ClInclude Include="lwip\src\include\lwip\nd6.h" />
+    <ClInclude Include="lwip\src\include\lwip\netbuf.h" />
+    <ClInclude Include="lwip\src\include\lwip\netdb.h" />
+    <ClInclude Include="lwip\src\include\lwip\netif.h" />
+    <ClInclude Include="lwip\src\include\lwip\netifapi.h" />
+    <ClInclude Include="lwip\src\include\lwip\opt.h" />
+    <ClInclude Include="lwip\src\include\lwip\pbuf.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\altcp_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\api_msg.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\memp_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\memp_std.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\mem_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\nd6_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\raw_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\sockets_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\tcpip_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\priv\tcp_priv.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\autoip.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\dhcp.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\dhcp6.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\dns.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\etharp.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\ethernet.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\iana.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\icmp.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\icmp6.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\ieee.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\igmp.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\ip.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\ip4.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\ip6.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\mld6.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\nd6.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\tcp.h" />
+    <ClInclude Include="lwip\src\include\lwip\prot\udp.h" />
+    <ClInclude Include="lwip\src\include\lwip\raw.h" />
+    <ClInclude Include="lwip\src\include\lwip\sio.h" />
+    <ClInclude Include="lwip\src\include\lwip\snmp.h" />
+    <ClInclude Include="lwip\src\include\lwip\sockets.h" />
+    <ClInclude Include="lwip\src\include\lwip\stats.h" />
+    <ClInclude Include="lwip\src\include\lwip\sys.h" />
+    <ClInclude Include="lwip\src\include\lwip\tcp.h" />
+    <ClInclude Include="lwip\src\include\lwip\tcpbase.h" />
+    <ClInclude Include="lwip\src\include\lwip\tcpip.h" />
+    <ClInclude Include="lwip\src\include\lwip\timeouts.h" />
+    <ClInclude Include="lwip\src\include\lwip\udp.h" />
+    <ClInclude Include="lwip\src\include\netif\bridgeif.h" />
+    <ClInclude Include="lwip\src\include\netif\bridgeif_opts.h" />
+    <ClInclude Include="lwip\src\include\netif\etharp.h" />
+    <ClInclude Include="lwip\src\include\netif\ethernet.h" />
+    <ClInclude Include="lwip\src\include\netif\ieee802154.h" />
+    <ClInclude Include="lwip\src\include\netif\lowpan6.h" />
+    <ClInclude Include="lwip\src\include\netif\lowpan6_ble.h" />
+    <ClInclude Include="lwip\src\include\netif\lowpan6_common.h" />
+    <ClInclude Include="lwip\src\include\netif\lowpan6_opts.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\ccp.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\chap-md5.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\chap-new.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\chap_ms.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\eap.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\ecp.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\eui64.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\fsm.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\ipcp.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\ipv6cp.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\lcp.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\magic.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\mppe.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\polarssl\arc4.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\polarssl\des.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\polarssl\md4.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\polarssl\md5.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\polarssl\sha1.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\ppp.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\pppapi.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\pppcrypt.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\pppdebug.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\pppoe.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\pppol2tp.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\pppos.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\ppp_impl.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\ppp_opts.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\upap.h" />
+    <ClInclude Include="lwip\src\include\netif\ppp\vj.h" />
+    <ClInclude Include="lwip\src\include\netif\slipif.h" />
+    <ClInclude Include="lwip\src\include\netif\zepif.h" />
+    <ClInclude Include="include\netifc.h" />
+    <ClInclude Include="uvw\async.hpp" />
+    <ClInclude Include="uvw\check.hpp" />
+    <ClInclude Include="uvw\dns.hpp" />
+    <ClInclude Include="uvw\emitter.hpp" />
+    <ClInclude Include="uvw\fs.hpp" />
+    <ClInclude Include="uvw\fs_event.hpp" />
+    <ClInclude Include="uvw\fs_poll.hpp" />
+    <ClInclude Include="uvw\handle.hpp" />
+    <ClInclude Include="uvw\idle.hpp" />
+    <ClInclude Include="uvw\lib.hpp" />
+    <ClInclude Include="uvw\loop.hpp" />
+    <ClInclude Include="uvw\pipe.hpp" />
+    <ClInclude Include="uvw\poll.hpp" />
+    <ClInclude Include="uvw\prepare.hpp" />
+    <ClInclude Include="uvw\process.hpp" />
+    <ClInclude Include="uvw\request.hpp" />
+    <ClInclude Include="uvw\resource.hpp" />
+    <ClInclude Include="uvw\signal.hpp" />
+    <ClInclude Include="uvw\stream.hpp" />
+    <ClInclude Include="uvw\tcp.hpp" />
+    <ClInclude Include="uvw\thread.hpp" />
+    <ClInclude Include="uvw\timer.hpp" />
+    <ClInclude Include="uvw\tty.hpp" />
+    <ClInclude Include="uvw\udp.hpp" />
+    <ClInclude Include="uvw\underlying_type.hpp" />
+    <ClInclude Include="uvw\util.hpp" />
+    <ClInclude Include="uvw\work.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
